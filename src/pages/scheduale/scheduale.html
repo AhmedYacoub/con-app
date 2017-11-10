@@ -1,0 +1,33 @@
+<!--
+  Generated template for the SchedualePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar no-border-bottom color="primary">
+    <ion-title>Schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-card *ngFor="let s of allSchedules | async">
+	  <ion-card-header>
+	  	<strong>{{ s.title }}</strong>
+	  </ion-card-header>
+	  <ion-card-content>
+	    <p>
+			Time: {{ s.start_end_time }}
+		<br/>
+			Speaker: {{ s.speaker }}
+		<br/>
+			Location: {{ s.location }}
+		</p>
+	  </ion-card-content>
+	</ion-card>
+
+</ion-content>

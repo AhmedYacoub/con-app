@@ -1,0 +1,80 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item text-wrap>
+		<div *ngFor="let speaker of speakers | async" dir="rtl">
+		<ion-card *ngIf="speaker.speaker_name == name"> 
+		  <img src="{{ speaker.image_link }}" />
+			  <ion-card-content >
+			    <ion-card-title>
+			      <strong>{{ speaker.speaker_name }}</strong>
+			      </ion-card-title>
+			    	<p>
+				      <strong>المنصب:</strong>
+				      <br/>
+				      {{ speaker.position }}
+				      <br/>
+				      <br/>
+
+				      <strong>الجهة:</strong>
+				      <br/>
+				      {{ speaker.org }}
+				      <br/>
+				      <br/>
+
+				      <strong>الدولة:</strong>
+				      <br/>
+				      {{ speaker.country }}
+				      <br/>
+				      <br/>
+
+				      <span *ngIf="speaker.even_title != ''">
+					      <strong>الموضوع:</strong>
+					      <br/>
+					      	{{ speaker.even_title }}
+					      <br/>
+					      <br/>
+				    	</span>
+
+				      <span *ngIf="speaker.email != ''">
+				      	<ion-icon name="mail"></ion-icon>
+				      	{{ speaker.email}}
+				      </span>
+				      <br/>
+
+				      <span *ngIf="speaker.mob != ''">
+				      	<ion-icon name="phone-portrait"></ion-icon>
+				      	{{ speaker.mob}}
+				      </span>
+
+				      <span *ngIf="speaker.land != ''">
+				      	<ion-icon name="call"></ion-icon>
+				      	{{ speaker.land}}
+				      </span>
+				      <br/>
+				      <br/>
+
+				      <span *ngIf="speaker.about != ''">
+					      <strong>السيرة المختصرة</strong>
+					      <br/>
+					      {{ speaker.about }}
+				    	</span>
+			    </p>
+			  </ion-card-content>
+			</ion-card>
+		</div>
+	</ion-item>
+</ion-content>
