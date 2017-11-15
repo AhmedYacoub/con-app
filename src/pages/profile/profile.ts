@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @IonicPage()
 @Component({
@@ -9,7 +9,7 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-	speakers: object[];
+	speakers: FirebaseListObservable<any[]>;
   speaker: any;
 	name;
   

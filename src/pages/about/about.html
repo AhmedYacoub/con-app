@@ -1,11 +1,20 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      About
+      About Conference
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content padding text-center>
+  <div *ngFor="let a of about | async">
+    <img src="{{ a.image_link }}">
+    <h2>{{ a.title }}</h2>
+    <br>
+    <h3>{{ a.date }}</h3>
+    <br>
+    <p>
+      {{ a.about }}
+    </p>
+  </div>
 </ion-content>

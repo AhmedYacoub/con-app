@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar  color="primary">
     <ion-title>Speakers</ion-title>
   </ion-navbar>
 
@@ -11,10 +11,12 @@
 	<ion-list>
 	  <ion-item *ngFor="let speaker of allSpeakers | async">
 	    <ion-thumbnail item-start title="{{ speaker.speaker_name }}">
-	      <img src="{{ speaker.image_link }}">
+				<ion-avatar>
+						<img src="{{ speaker.image_link }}">
+				</ion-avatar>
+	      
 	    </ion-thumbnail>
-	    <h2>{{ speaker.speaker_name}}</h2>
-	    <p>{{ speaker.position }}</p>
+	    <p>{{ speaker.speaker_name}}</p> 
 	    <button ion-button clear item-end (click)="showSpeaker(speaker.speaker_name)">View</button>
 	  </ion-item>
 	</ion-list>

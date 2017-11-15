@@ -1,3 +1,14 @@
 page-about {
+    @import url('https://fonts.googleapis.com/css?family=Cairo');
+    
+    * {
+        font-family: "Cairo";
+    }
 
+    img {
+        align-items: center;
+    }
+    h2 {
+        text-align: center;
+    }
 }

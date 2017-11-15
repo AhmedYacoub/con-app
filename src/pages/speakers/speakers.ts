@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
-
+import { FirebaseListObservable } from 'angularfire2/database';
 import { ProfilePage } from '../profile/profile';
 
 @IonicPage()
@@ -10,7 +10,7 @@ import { ProfilePage } from '../profile/profile';
   templateUrl: 'speakers.html',
 })
 export class SpeakersPage {
-	allSpeakers: object[];
+	allSpeakers: FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firePro: FirebaseProvider) {
   	this.allSpeakers = this.firePro.getAllSpeakers();

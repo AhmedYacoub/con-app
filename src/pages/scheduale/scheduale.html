@@ -13,21 +13,28 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding dir="rtl">
 
-	<ion-card *ngFor="let s of allSchedules | async">
-	  <ion-card-header>
-	  	<strong>{{ s.title }}</strong>
-	  </ion-card-header>
-	  <ion-card-content>
-	    <p>
-			Time: {{ s.start_end_time }}
-		<br/>
-			Speaker: {{ s.speaker }}
-		<br/>
-			Location: {{ s.location }}
-		</p>
-	  </ion-card-content>
-	</ion-card>
+	<div *ngFor="let s of allSchedules | async">
+			<div class="hugeTitle" *ngIf="s.id == '-1'">
+					<h2>{{ s.title }}</h2>
+			</div>
+		<ion-item-divider *ngIf="s.id == '-2'" class="medTitle">
+			<ion-label>
+				{{ s.start_end_time }}
+			</ion-label>
+		</ion-item-divider>
+		<ion-card *ngIf="s.id == ''" class="center">
+			<ion-card-content>
+				<!-- Title -->
+				<strong>{{ s.title }}</strong>
+				<p style=" margin-top: 20px;" *ngIf="s.speaker != ''"></p>
+				<!-- body -->
+				<p style="text-align: right; margin-bottom: 15px;" *ngFor="let sp of s.speaker">
+					<span>{{ sp }}</span>
+				</p>
 
+			</ion-card-content>
+		</ion-card>
+	</div>
 </ion-content>
