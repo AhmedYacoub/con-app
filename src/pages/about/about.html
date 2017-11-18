@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="secondary" text-center>
     <ion-title>
       About Conference
     </ion-title>
@@ -10,9 +10,13 @@
   <div *ngFor="let a of about | async">
     <img src="{{ a.image_link }}">
     <h2>{{ a.title }}</h2>
+    
+    <p>{{ a.date }}</p>
+
+    <h5>مكان الانعقاد</h5>
+    <h5>فندق باب القصر - ابو ظبي</h5>
     <br>
-    <h3>{{ a.date }}</h3>
-    <br>
+    
     <p>
       {{ a.about }}
     </p>

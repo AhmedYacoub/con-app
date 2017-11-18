@@ -10,16 +10,14 @@ declare var google: any;
   selector: 'page-map',
   templateUrl: 'map.html',
 })
+
 export class MapPage {
-  map: FirebaseListObservable<any[]>;
   longitude: any;
   latitude: any;
   zoom: any;
   @ViewChild('map') mapRef: ElementRef;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firePro: FirebaseProvider) {
-    // get map longitude, latitude and zoom
-    this.map = this.firePro.getMapLocation();
   }
 
   ionViewDidLoad() {
@@ -27,14 +25,19 @@ export class MapPage {
   }
 
   showMap() {
-    const location = new google.maps.LatLng(25.2199095, 55.3431537);
+    const location = new google.maps.LatLng(24.458416, 54.320113);
     const options = {
       center: location,
-      zoom: 10
+      zoom: 17
     }
-    this.map = new google.maps.Map(this.mapRef.nativeElement, options);
+    const map = new google.maps.Map(this.mapRef.nativeElement, options);
+    this.addMarker(location, map);
   }
 
-  
-
+  addMarker(position, map) {
+    return new google.maps.Marker({
+      position,
+      map
+    });
+  }
 }

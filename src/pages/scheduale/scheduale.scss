@@ -6,11 +6,18 @@ page-scheduale {
     }
 
     .hugeTitle {
-        background-color: #488aff; text-align: center; padding: 10px; color: white; border-radius: 5px;
+        background-color: color($colors, 'secondary'); 
+        text-align: center; 
+        padding: 10px; 
+        color: white; 
+        border-radius: 5px;
     }
 
     .medTitle {
-        text-align: center; background-color: #f4f4f4; margin-top: 15%;
+        text-align: center; 
+        background-color: #f4f4f4; 
+        margin-top: 15%;
+        border-radius: 5px;
     }
 
     .center {
