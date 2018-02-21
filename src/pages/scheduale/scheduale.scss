@@ -15,11 +15,15 @@ page-scheduale {
 
     .medTitle {
         text-align: center; 
-        background-color: #f4f4f4; 
+        background-color: #FAFCD6; 
+        color: black !important;
         margin-top: 15%;
         border-radius: 5px;
     }
 
+    ion-card {
+        // background-color: #FAFCD6 !important;
+    }
     .center {
         text-align: center;
     }
